@@ -13,9 +13,9 @@ import { HousingService } from '../housing.service';
   ],
   template: `
     <section>
-      <form>
+      <form (submit)="filterResults(filter.value); $event.preventDefault()">
         <input type="text" placeholder="Filter by city" #filter>
-        <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
+        <button class="primary" type="submit">Search</button>
       </form>
     </section>
     <section class="results">
